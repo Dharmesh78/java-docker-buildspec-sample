@@ -18,16 +18,16 @@ steps:
         runAs: root
   - type: Command
     timeoutInSeconds: 10000
-    name: "Create Docker image"
+    name: "Predefined system variables"
     command: |
-      docker build -t hello-world:1.0 .
+      echo $OCI_STAGE_ID > output.txt
     onFailure:
       - type: Command
         command: |
-          echo "Creating Docker image failed"
+          echo "variable printing failed"
         timeoutInSeconds: 1000
         runAs: root
 outputArtifacts:
-  - name: hello_world_image
-    type: DOCKER_IMAGE
-    location: hello-world:1.0
+  - name: output
+    type: BINARY_IMAGE
+    location: output.txt
