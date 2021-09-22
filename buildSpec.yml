@@ -20,6 +20,7 @@ steps:
     timeoutInSeconds: 10000
     name: "Predefined system variables"
     command: |
+      echo $OCI_STAGE_ID
       echo $OCI_STAGE_ID > output.txt
     onFailure:
       - type: Command
@@ -29,5 +30,5 @@ steps:
         runAs: root
 outputArtifacts:
   - name: output
-    type: BINARY_IMAGE
+    type: BINARY
     location: output.txt
