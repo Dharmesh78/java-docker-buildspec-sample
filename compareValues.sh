@@ -1,47 +1,41 @@
 #!/bin/bash
-if [ $OCI_STAGE_ID ==  
-ocid1.devopsbuildpipelinestage.oc1.iad.amaaaaaa4725fbqa5kv7zzw7l5ksrovxcsytjb4tuzbb2ujyb4jngq4m5nbq]
-then
-   echo "Build stage OCI_STAGE_ID True" >> output.txt
-else
-   echo "Build stage OCI_STAGE_ID False" >> output.txt
-fi
 
-if [ $OCI_PIPELINE_ID ==  
-'oocid1.devopsbuildpipeline.oc1.iad.amaaaaaa4725fbqadtrcrxopo3vqqao4awo4ee5o6imjje327qklizxzcuda']
-then
-   echo " OCI_PIPELINE_ID True" >> output.txt
-else
-   echo " OCI_PIPELINE_ID False" >> output.txt
-fi
+echo "Build stage OCI_STAGE_ID True" >> output.txt
+echo $OCI_STAGE_ID >> output.txt
 
-echo "Build run id"
+echo " OCI_PIPELINE_ID True" >> output.txt
+echo $OCI_PIPELINE_ID >> output.txt
+
+echo "Build run id" >> output.txt
 echo $OCI_BUILD_RUN_ID >> output.txt
 
-echo "source branch name"
+echo "source branch name" >> output.txt
 echo $OCI_TRIGGER_SOURCE_BRANCH_NAME>> output.txt
 
 
-echo "source commit hash"
+echo "source commit hash" >> output.txt
 echo $OCI_TRIGGER_COMMIT_HASH >> output.txt
 
-echo "source commit hash"
+echo "source commit hash" >> output.txt
 echo $OCI_TRIGGER_COMMIT_HASH >> output.txt
 
-echo "source url"
+echo "source url" >> output.txt
 echo $OCI_TRIGGER_SOURCE_URL >> output.txt
 
-echo "source directory"
+echo "source directory" >> output.txt
 echo $OCI_PRIMARY_SOURCE_DIR >> output.txt
 
-echo "workspace directory"
+echo "workspace directory" >> output.txt
 echo $OCI_WORKSPACE_DIR >> output.txt
 
 
-echo "build stage name"
+echo "build stage name" >> output.txt
 echo $OCI_BUILD_STAGE_NAME >> output.txt
 
-echo "primary source name"
+echo "workspace buildspec.yaml path" >> output.txt
+echo ${OCI_WORKSPACE_DIR}/buildSpec.yml >> output.txt
+
+echo "primary source name" >> output.txt
 echo $OCI_PRIMARY_SOURCE_NAME >> output.txt
 
 
