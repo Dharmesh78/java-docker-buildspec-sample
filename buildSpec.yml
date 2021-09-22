@@ -4,24 +4,12 @@ timeoutInSeconds: 20000
 runAs: root
 shell: bash
 steps:
-  - type: Command
-    name: "Build Hello World"
-    timeoutInSeconds: 10000
-    command: |
-      cd src/com/sample/
-      javac HelloWorld.java
-    onFailure:
-      - type: Command
-        command: |
-          echo "Building Hello World failed"
-        timeoutInSeconds: 1000
-        runAs: root
+
   - type: Command
     timeoutInSeconds: 10000
     name: "Predefined system variables"
     command: |
-      echo $OCI_STAGE_ID
-      echo $OCI_STAGE_ID > output.txt
+      bash compareValues.sh
     onFailure:
       - type: Command
         command: |
