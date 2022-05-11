@@ -1,0 +1,39 @@
+version: 0.1
+component: build
+timeoutInSeconds: 600
+runAs: root
+shell: bash
+# env:
+#   variables:
+#     "major_version" : "1.1"
+#   exportedVariables:
+#     - major_version
+
+steps:
+#   - type: Command
+#     name: "PreReq install"
+#     command: |
+#       yum -y install curl
+#   - type: Command
+#     name: "Dockerize"
+#     command: |
+#       docker build -t docktest .
+#   - type: Command
+#     name: "Save"
+#     command: |
+#       docker save docktest -o docktest.tar
+#   - type: Command
+#     name: "SaveResult"
+#     command: |
+#       ls >> dockImagesResult.txt
+# #   - type: Command
+# #     name: "SaveResult"
+# #     command: |
+# #       export major_version=1.2
+# outputArtifacts:
+#   - name: docktest
+#     type: BINARY
+#     location: docktest.tar
+#   - name: docktestdocker
+#     type: DOCKER_IMAGE
+#     location: docktest
